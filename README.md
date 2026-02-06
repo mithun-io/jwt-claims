@@ -147,5 +147,5 @@ Started JwtClaimsApplication
 ### Common Issues
 #### Build Failure – Unable to Delete target Folder, Stop any running application in Eclipse
 
-### Close Eclipse, Delete the target folder manually, Pause OneDrive syncing if the project is inside OneDrive
-### Re-run clean package
+#### Close Eclipse, Delete the target folder manually, Pause OneDrive syncing if the project is inside OneDrive
+#### Re-run clean package
