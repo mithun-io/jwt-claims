@@ -142,9 +142,9 @@ java -jar jwt-claims-0.0.1-SNAPSHOT.jar
 #### If the application starts successfully, you will see:
 Tomcat started on port 8080
 Started JwtClaimsApplication
-### The API will be available at: http://localhost:8080
+#### The API will be available at: http://localhost:8080
 
-### Common Issues
+#### Common Issues
 #### Build Failure – Unable to Delete target Folder, Stop any running application in Eclipse
 
 #### Close Eclipse, Delete the target folder manually, Pause OneDrive syncing if the project is inside OneDrive
