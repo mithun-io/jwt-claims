@@ -108,14 +108,12 @@ PATCH /api/auth/users/{id}/deactivate
 1. Open the project in Eclipse
 2. Right-click the project
 3. Select **Run As → Maven build...**
-4. In **Goals**, enter:
-clean package
+4. In **Goals**, enter: clean package
 
 5. Click **Run**
 
 If the build is successful, you will see:
 BUILD SUCCESS
-
 
 ---
 
@@ -126,7 +124,6 @@ After a successful build, Maven generates the JAR file in:
 target/
 └── jwt-claims-0.0.1-SNAPSHOT.jar
 
-
 ---
 
 ### Step 3: Run the JAR from Command Line (CMD)
@@ -135,38 +132,20 @@ target/
 2. Navigate to the `target` directory:
    ```cmd
    cd path\to\your-project\target
-Example:
+### Example:
 
-cd C:\Users\mithu\eclipse-workspace\jwt-claims\target
-Run the application:
-
+### cd C:\Users\mithu\eclipse-workspace\jwt-claims\target
+### Run the application:
 java -jar jwt-claims-0.0.1-SNAPSHOT.jar
-Step 4: Verify Application
-If the application starts successfully, you will see:
 
+### Step 4: Verify Application
+#### If the application starts successfully, you will see:
 Tomcat started on port 8080
 Started JwtClaimsApplication
-The API will be available at:
+### The API will be available at: http://localhost:8080
 
-http://localhost:8080
-Common Issues
-Build Failure – Unable to Delete target Folder
-Stop any running application in Eclipse
+### Common Issues
+#### Build Failure – Unable to Delete target Folder, Stop any running application in Eclipse
 
-Close Eclipse
-
-Delete the target folder manually
-
-Pause OneDrive syncing if the project is inside OneDrive
-
-Re-run clean package
-
-Port Already in Use
-netstat -ano | findstr 8080
-taskkill /PID <pid> /F
-Notes
-Do not keep the project inside OneDrive to avoid file lock issues
-
-Always rebuild the project after changing dependencies in pom.xml
-
-Use mvn clean package to generate a fresh JAR
+### Close Eclipse, Delete the target folder manually, Pause OneDrive syncing if the project is inside OneDrive
+### Re-run clean package
