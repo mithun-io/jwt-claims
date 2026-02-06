@@ -61,12 +61,9 @@ Add the following dependencies in `pom.xml`:
 ### Public APIs
 
 #### Register
-
 POST /api/auth/register
 
-
 #### Login
-
 POST /api/auth/login
 
 ---
@@ -74,45 +71,102 @@ POST /api/auth/login
 ### Secured APIs (JWT Required)
 
 #### Fetch All Users (ADMIN)
-
-
 GET /api/auth/users
 
-
 #### Fetch User by ID (ADMIN, USER)
-
-
 GET /api/auth/users/{id}
 
-
 #### Fetch User by Username (ADMIN, USER)
-
-
 GET /api/auth/users/username/{username}
 
-
 #### Update User (ADMIN, USER)
-
-
 PUT /api/auth/users/{id}
 
-
 #### Patch User (ADMIN, USER)
-
-
 PATCH /api/auth/users/{id}
 
-
 #### Delete User (ADMIN)
-
-
 DELETE /api/auth/users/{id}
 
-
 #### Deactivate User (ADMIN)
-
-
 PATCH /api/auth/users/{id}/deactivate
+
+---
+
+## Build & Run the Application (JAR)
+
+### Prerequisites
+- Java 17+ installed
+- Maven installed (or Eclipse Embedded Maven)
+- MySQL running
+- Database credentials configured in `application.properties`
+
+---
+
+### Step 1: Build the JAR using Eclipse
+
+1. Open the project in Eclipse
+2. Right-click the project
+3. Select **Run As → Maven build...**
+4. In **Goals**, enter:
+clean package
+
+5. Click **Run**
+
+If the build is successful, you will see:
+BUILD SUCCESS
 
 
 ---
+
+### Step 2: Locate the Generated JAR
+
+After a successful build, Maven generates the JAR file in:
+
+target/
+└── jwt-claims-0.0.1-SNAPSHOT.jar
+
+
+---
+
+### Step 3: Run the JAR from Command Line (CMD)
+
+1. Open Command Prompt
+2. Navigate to the `target` directory:
+   ```cmd
+   cd path\to\your-project\target
+Example:
+
+cd C:\Users\mithu\eclipse-workspace\jwt-claims\target
+Run the application:
+
+java -jar jwt-claims-0.0.1-SNAPSHOT.jar
+Step 4: Verify Application
+If the application starts successfully, you will see:
+
+Tomcat started on port 8080
+Started JwtClaimsApplication
+The API will be available at:
+
+http://localhost:8080
+Common Issues
+Build Failure – Unable to Delete target Folder
+Stop any running application in Eclipse
+
+Close Eclipse
+
+Delete the target folder manually
+
+Pause OneDrive syncing if the project is inside OneDrive
+
+Re-run clean package
+
+Port Already in Use
+netstat -ano | findstr 8080
+taskkill /PID <pid> /F
+Notes
+Do not keep the project inside OneDrive to avoid file lock issues
+
+Always rebuild the project after changing dependencies in pom.xml
+
+Use mvn clean package to generate a fresh JAR
