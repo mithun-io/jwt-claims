@@ -22,7 +22,6 @@ public abstract class UserMapper {
 	@Mapping(target = "userRole", expression = "java(com.enums.UserRole.USER)")
 	@Mapping(target = "isActive", constant = "true")
 	@Mapping(target = "password", expression = "java(passwordEncoder.encode(userRequest.getPassword()))")
-//	@Mapping(target = "age", expression = "java(java.time.Period.between(userRequest.getBirthdate(), java.time.LocalDate.now()).getYears())")
 	public abstract User toUser(UserRequest userRequest);
 
 	public abstract UserResponse toUserResponse(User user);
